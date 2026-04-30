@@ -5,9 +5,7 @@ public class Loja{
     private String nome;
     private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
-    private Endereco enderecoLoja;
-    private Data dataFundacao;
-    
+
     public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario) { //Método construtor geral que cria um objeto da classe "Loja"
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
