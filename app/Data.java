@@ -7,6 +7,10 @@ public class Data {
 
     //Método para validar a data
 
+    private boolean validarAnoBissexto(int ano){
+        return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+    }
+
     private boolean validarData(int dia, int mes, int ano){
 
         if (mes < 1 || mes > 12) {
@@ -19,7 +23,7 @@ public class Data {
             return false;
         }
         if (mes == 2) {
-            if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+            if (validarAnoBissexto(ano)) {
                 return dia <= 29;
             } else {
                 return dia <= 28; 
@@ -76,5 +80,9 @@ public class Data {
         if (validarData(this.dia, this.mes, this.ano)){
             this.ano = ano;
         }
+    }
+
+    public String toString(){
+        return this.dia + "/" + this.mes + "/" + this.ano;
     }
 }
