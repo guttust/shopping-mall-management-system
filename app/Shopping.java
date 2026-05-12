@@ -56,7 +56,7 @@ public class Shopping {
 
     public boolean removeStore(String name){
         for(int i = 0; i < this.stores.length; i++){
-            if(this.stores[i] != null && this.stores[i].getName().equals(name)){
+            if(this.stores[i] != null && this.stores[i].getName().equalsIgnoreCase(name)){
                 this.stores[i] = null;
                 return true;
             }
@@ -96,5 +96,19 @@ public class Shopping {
         return -1;
     }
 
-    public ElectronicsStore store
+    public ElectronicsStore getStoreWithMostExpensiveInsurance(){
+        ElectronicsStore result = null;
+
+        for(int i = 0; i < this.stores.length; i++){
+            Store store = this.stores[i];
+            if(store != null && store instanceof ElectronicsStore){
+                ElectronicsStore electronicsStore = (ElectronicsStore) store;
+
+                if(result == null || electronicsStore.getElectronicsInsurance() > result.getElectronicsInsurance()){
+                    result = electronicsStore;
+                }
+            }
+        }
+        return result;
+    }
 }

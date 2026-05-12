@@ -1,6 +1,6 @@
 package app;
 
-public class Address {
+public class Address{
     private String streetName;
     private String city;
     private String state;
@@ -9,7 +9,7 @@ public class Address {
     private String number;
     private String complement;
 
-    public Address(String streetName, String city, String state, String country, String zipCode, String number, String complement) {
+    public Address(String streetName, String city, String state, String country, String zipCode, String number, String complement){
         this.streetName = streetName;
         this.city = city;
         this.state = state;
@@ -19,43 +19,43 @@ public class Address {
         this.complement = complement;
     }
 
-    public String getStreetName() {
+    public String getStreetName(){
         return this.streetName;
     }
 
-    public void setStreetName(String streetName) {
+    public void setStreetName(String streetName){
         this.streetName = streetName;
     }
 
-    public String getCity() {
+    public String getCity(){
         return this.city;
     }
 
-    public void setCity(String city) {
+    public void setCity(String city){
         this.city = city;
     }
 
-    public String getState() {
+    public String getState(){
         return this.state;
     }
 
-    public void setState(String state) {
+    public void setState(String state){
         this.state = state;
     }
 
-    public String getCountry() {
+    public String getCountry(){
         return this.country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(String country){
         this.country = country;
     }
 
-    public String getZipCode() {
+    public String getZipCode(){
         return this.zipCode;
     }
 
-    public void setZipCode(String zipCode) {
+    public void setZipCode(String zipCode){
         this.zipCode = zipCode;
     }
 
@@ -63,19 +63,19 @@ public class Address {
         return this.number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(String number){
         this.number = number;
     }
 
-    public String getComplement() {
+    public String getComplement(){
         return this.complement;
     }
 
-    public void setComplement(String complement) {
+    public void setComplement(String complement){
         this.complement = complement;
     }
 
-    public String toString() {
+    public String toString(){
         return "Address: " + this.streetName
             + "\nNumber: " + this.number
             + "\nComplement: " + this.complement

@@ -4,15 +4,15 @@ import app.Product;
 import app.Store;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main{
+    public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
         int option = 0;
         Store createdStore = null;
         Product createdProduct = null;
 
-        while (option != 3) {
+        while(option != 3){
             System.out.println("MENU:");
             System.out.println("Enter the number for the desired option:");
             System.out.println("[1] Create a Store");
@@ -22,7 +22,7 @@ public class Main {
             option = scanner.nextInt();
             scanner.nextLine();
 
-            if (option == 1) {
+            if(option == 1){
                 System.out.println("Enter the store name: ");
                 String storeName = scanner.nextLine();
 
@@ -32,6 +32,10 @@ public class Main {
 
                 System.out.println("Enter the base employee salary: ");
                 double employeeBaseSalary = scanner.nextDouble();
+                scanner.nextLine();
+
+                System.out.println("Enter the maximum number of products in stock: ");
+                int maximumProductCount = scanner.nextInt();
                 scanner.nextLine();
 
                 System.out.println("Enter the store address: ");
@@ -72,8 +76,8 @@ public class Main {
                 Address storeAddress = new Address(streetName, city, state, country, zipCode, number, complement);
                 Date foundationDate = new Date(foundationDay, foundationMonth, foundationYear);
 
-                createdStore = new Store(storeName, employeeCount, employeeBaseSalary, storeAddress, foundationDate);
-            } else if (option == 2) {
+                createdStore = new Store(storeName, employeeCount, employeeBaseSalary, storeAddress, foundationDate, maximumProductCount);
+            } else if (option == 2){
                 System.out.println("Enter the product name: ");
                 String productName = scanner.nextLine();
 
@@ -97,18 +101,18 @@ public class Main {
                 Date expirationDate = new Date(day, month, year);
 
                 createdProduct = new Product(productName, productPrice, expirationDate);
-            } else if (option == 3) {
+            }else if (option == 3){
                 System.out.println("Exiting program...");
-            } else {
+            }else{
                 System.out.println("Invalid option");
             }
 
-            if (createdStore != null && createdProduct != null && option != 3) {
+            if(createdStore != null && createdProduct != null && option != 3){
                 Date referenceDate = new Date(20, 10, 2023);
 
-                if (createdProduct.isExpired(referenceDate)) {
+                if(createdProduct.isExpired(referenceDate)){
                     System.out.println("EXPIRED PRODUCT");
-                } else {
+                }else{
                     System.out.println("NOT EXPIRED PRODUCT");
                 }
 
